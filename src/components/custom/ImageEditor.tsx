@@ -14,9 +14,10 @@ import {
 
 interface Props {
   imageURL: string;
+  imageName: string;
 }
 
-export function ImageEditor({ imageURL }: Props) {
+export function ImageEditor({ imageURL, imageName }: Props) {
   const imageRef = useRef<HTMLImageElement>(null);
   const previewCanvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -86,13 +87,15 @@ export function ImageEditor({ imageURL }: Props) {
     if (!previewCanvasRef.current || !isCropped) return;
     const canvas = previewCanvasRef.current;
     const link = document.createElement("a");
-    link.download = `cropped.${format}`;
+
+    const nameWithoutExt = imageName?.split(".")[0] ?? "image";
+    link.download = `${nameWithoutExt}-cropped.${format}`;
     link.href = canvas.toDataURL(`image/${format}`);
     link.click();
   };
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-4 w-full">
       <div className="text-sm text-gray-700 dark:text-gray-300">
         {completedCrop && (
           <p>
@@ -102,27 +105,33 @@ export function ImageEditor({ imageURL }: Props) {
         )}
       </div>
 
-      <ReactCrop
-        crop={crop}
-        onChange={(c) => {
-          setCrop(c);
-          setIsCropped(false);
-        }}
-        onComplete={(c) => setCompletedCrop(c)}
-        keepSelection
+      <div
+        className="w-full max-w-[900px] h-[600px] overflow-auto border rounded-md"
+        style={{ backgroundColor: "#000" }}
       >
-        <img
-          ref={imageRef}
-          src={imageURL}
-          alt="Uploaded"
-          onLoad={onImageLoad}
-          className="max-w-full max-h-[70vh]"
-        />
-      </ReactCrop>
+        <ReactCrop
+          crop={crop}
+          onChange={(c) => {
+            setCrop(c);
+            setIsCropped(false);
+          }}
+          onComplete={(c) => setCompletedCrop(c)}
+          keepSelection
+        >
+          <img
+            ref={imageRef}
+            src={imageURL}
+            alt="Uploaded"
+            onLoad={onImageLoad}
+            className="object-contain max-w-full max-h-full"
+            style={{ display: "block", margin: "auto" }}
+          />
+        </ReactCrop>
+      </div>
 
       <canvas ref={previewCanvasRef} style={{ display: "none" }} />
 
-      <div className="flex gap-2 items-center">
+      <div className="flex flex-wrap gap-2 items-center">
         <Button
           onClick={handleSave}
           disabled={isCropped}
