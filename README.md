@@ -41,7 +41,7 @@ pnpm dev
 
 ## 🌐 Live Demo
 
-🔗 [https://exploitenginner-image-resizer.vercel.app](https://exploitenginner-image-resizer.vercel.app)
+🔗 [https://exploitenginner-image-resizer.vercel.app](https://image-resizer-tool-phi.vercel.app)
 
 ---
 
