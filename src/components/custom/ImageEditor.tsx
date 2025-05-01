@@ -19,7 +19,6 @@ interface Props {
 export function ImageEditor({ imageURL }: Props) {
   const imageRef = useRef<HTMLImageElement>(null);
   const previewCanvasRef = useRef<HTMLCanvasElement>(null);
-  const [naturalSize, setNaturalSize] = useState({ width: 0, height: 0 });
 
   const [crop, setCrop] = useState<Crop>({
     unit: "px",
@@ -69,7 +68,6 @@ export function ImageEditor({ imageURL }: Props) {
 
   const onImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
     const { naturalWidth, naturalHeight } = e.currentTarget;
-    setNaturalSize({ width: naturalWidth, height: naturalHeight });
     setCrop({
       unit: "px",
       x: 0,
