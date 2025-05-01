@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📸 Image Resizer Tool
 
-## Getting Started
+A fast, intuitive image cropping and resizing tool built using **Next.js**, **TailwindCSS**, **shadcn/ui**, and **React Image Crop**. Upload any image, crop it visually, and download it in your preferred format with live dimension feedback.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- 📤 Upload any image format (PNG, JPG, JPEG, WEBP)
+- ✂️ Interactive cropping with drag & resize corners
+- 📐 Live width & height display during crop
+- 💾 Save cropped region before download
+- ⬇️ Download in multiple formats: PNG, JPG, WEBP
+- 🌙 Dark mode support
+- 💅 Built with shadcn/ui components
+
+---
+
+## 📦 Tech Stack
+
+- [Next.js](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [React Image Crop](https://github.com/DominicTobias/react-image-crop)
+- TypeScript
+
+---
+
+## 🛠️ Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone https://github.com/ExploitEnginner/image-resizer-tool.git
+cd image-resizer-tool
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> Ensure you have `pnpm` installed globally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 Live Demo
 
-## Learn More
+🔗 [https://exploitenginner-image-resizer.vercel.app](https://exploitenginner-image-resizer.vercel.app)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.  
+© [ExploitEnginner](https://github.com/ExploitEnginner)
