@@ -106,7 +106,7 @@ export function ImageEditor({ imageURL, imageName }: Props) {
       </div>
 
       <div
-        className="w-full max-w-[900px] h-[600px] overflow-auto border rounded-md"
+        className="w-full max-w-[900px] max-h-[600px] overflow-auto border rounded-md"
         style={{ backgroundColor: "#000" }}
       >
         <ReactCrop
@@ -123,8 +123,12 @@ export function ImageEditor({ imageURL, imageName }: Props) {
             src={imageURL}
             alt="Uploaded"
             onLoad={onImageLoad}
-            className="object-contain max-w-full max-h-full"
-            style={{ display: "block", margin: "auto" }}
+            className="object-cover"
+            style={{
+              display: "block",
+              width: "auto",
+              height: "auto",
+            }}
           />
         </ReactCrop>
       </div>
