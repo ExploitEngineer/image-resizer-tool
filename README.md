@@ -33,6 +33,7 @@ git clone https://github.com/ExploitEnginner/image-resizer-tool.git
 cd image-resizer-tool
 pnpm install
 pnpm dev
+
 ```
 
 > Ensure you have `pnpm` installed globally.
